@@ -706,19 +706,16 @@ class PdfTextExtractor {
                   } else if (i >= stringList.length) {
                     break;
                   } else {
-                    stringList.removeRange(spaceStartIndex + 1, i);
-                    print("console logging");
-                    print(innerSpaceTrimmedTextGlyph.length);
-                    print(innerSpaceTrimmedTextGlyph[spaceStartIndex].toUnicode);
-                    print(innerSpaceTrimmedTextGlyph[spaceStartIndex].toString());
-                    print(innerSpaceTrimmedTextGlyph[i - 1].toUnicode);
-                    print(innerSpaceTrimmedTextGlyph[i - 1].toString());
-                    print(innerSpaceTrimmedTextGlyph[i].toUnicode);
-                    print(innerSpaceTrimmedTextGlyph[i].toString());
-                    print(i);
-                    innerSpaceTrimmedTextGlyph.removeRange(
-                        spaceStartIndex + 1, i);
-                    break;
+                    try {
+                      stringList.removeRange(spaceStartIndex + 1, i);
+                      innerSpaceTrimmedTextGlyph.removeRange(
+                          spaceStartIndex + 1, i);
+                    } catch (exception) {
+                      innerSpaceTrimmedTextGlyph.removeRange(
+                          spaceStartIndex + 1, i - 1);
+                    } finally {
+                      break;
+                    }
                   }
                 }
                 innerSpaceTrimmedString = stringList.join();
