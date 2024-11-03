@@ -708,8 +708,10 @@ class PdfTextExtractor {
                   } else {
                     stringList.removeRange(spaceStartIndex + 1, i);
                     print("console logging");
-                    print(innerSpaceTrimmedTextGlyph.toString());
-                    print(spaceStartIndex);
+                    print(innerSpaceTrimmedTextGlyph.length);
+                    print(innerSpaceTrimmedTextGlyph[spaceStartIndex]);
+                    print(innerSpaceTrimmedTextGlyph[i - 1]);
+                    print(innerSpaceTrimmedTextGlyph[i]);
                     print(i);
                     innerSpaceTrimmedTextGlyph.removeRange(
                         spaceStartIndex + 1, i - 1);
