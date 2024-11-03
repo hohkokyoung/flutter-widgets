@@ -712,7 +712,7 @@ class PdfTextExtractor {
                     print(spaceStartIndex);
                     print(i);
                     innerSpaceTrimmedTextGlyph.removeRange(
-                        spaceStartIndex + 1, i);
+                        spaceStartIndex + 1, i - 1);
                     break;
                   }
                 }
