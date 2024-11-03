@@ -709,12 +709,15 @@ class PdfTextExtractor {
                     stringList.removeRange(spaceStartIndex + 1, i);
                     print("console logging");
                     print(innerSpaceTrimmedTextGlyph.length);
-                    print(innerSpaceTrimmedTextGlyph[spaceStartIndex]);
-                    print(innerSpaceTrimmedTextGlyph[i - 1]);
-                    print(innerSpaceTrimmedTextGlyph[i]);
+                    print(innerSpaceTrimmedTextGlyph[spaceStartIndex].toUnicode);
+                    print(innerSpaceTrimmedTextGlyph[spaceStartIndex].toString());
+                    print(innerSpaceTrimmedTextGlyph[i - 1].toUnicode);
+                    print(innerSpaceTrimmedTextGlyph[i - 1].toString());
+                    print(innerSpaceTrimmedTextGlyph[i].toUnicode);
+                    print(innerSpaceTrimmedTextGlyph[i].toString());
                     print(i);
                     innerSpaceTrimmedTextGlyph.removeRange(
-                        spaceStartIndex + 1, i - 1);
+                        spaceStartIndex + 1, i);
                     break;
                   }
                 }
